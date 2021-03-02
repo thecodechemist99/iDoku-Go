@@ -6,7 +6,16 @@
         <title>Go &ndash; interaktive Dokumentation</title>
     </head>
     <body>
-        <object type="image/svg+xml" data="./img/Frau(1).svg" id="woman" class="hidden"></object>
-        <script src="./test.js"></script>
+        <section id="canvas">
+            <!-- Include static objects -->
+            <img src="img/static/train_station.png" id="station" class="hidden"/>
+            <img src="img/static/station_hall.svg" id="station-hall" class="hidden"/>
+
+            <!-- Include dynamic objects -->
+            <object type="image/svg+xml" data="./img/animated/Frau(1).svg" id="woman" class="hidden"></object>
+        </section>
+
+        <!-- Animation -->
+        <script src="src/main.js" type="module"></script>
     </body>
 </html>
