@@ -9,6 +9,7 @@ elements.forEach( (elem) => {
 
 // load backgrounds
 const station = document.getElementById('station');
+const stationBlurred = document.getElementById('station-blurred');
 const stationHallEntry = document.getElementById('station-hall-entry');
 const stationHallLeave = document.getElementById('station-hall-leave');
 const platform = document.getElementById('platform');
@@ -39,24 +40,22 @@ const textPaymentMachine = document.getElementById('text-payment-machine');
 
 // load dynamic elements
 const hand = document.getElementById('hand');
+const woman = document.getElementById('woman');
 const buttonAnimated = document.getElementById('button-animated');
 const train = document.getElementById('train');
-
-const woman = document.getElementById('woman');
-
 
 // setup scenes
 const scenes = [
     new Scene([station, woman]),
     new Scene([stationHallEntry, inlets]),
-    new Scene([inlet, button]),
+    new Scene([stationBlurred, inlet, button]),
     new Scene([platform, train]),
     new Scene([trainInside]),
     new Scene([platform, stairsLeft, stairsRight]),
     new Scene([stationHallLeave, payingMachines]),
-    new Scene([payingMachine, textTokenTypes]),
+    new Scene([stationBlurred, payingMachine, textTokenTypes]),
     new Scene([stationHallLeave, outlets]),
-    new Scene([outlet]),
+    new Scene([stationBlurred, outlet]),
     new Scene([endcard, more, retry])
 ]
 
