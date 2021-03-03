@@ -7,11 +7,16 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    cursor: none;
 }
 
 #canvas {
+    position: relative;
     height: 100vh;
     width: calc(calc(100vh / 9) * 16);
+
+    overflow: hidden;
 }
 
 img {
@@ -26,9 +31,38 @@ object {
     display: none;
 }
 
+/* static objects */
+
+#stairs-left {
+    position: absolute;
+    left: -11px;
+    top: 43.9%;
+    height: 31.9%;
+}
+
+#stairs-right {
+    position: absolute;
+    top: 44.5%;
+    right: -29.5px;
+    height: 32.55%;
+}
+
 /* animated objects */
 
 #woman {
     left: 50px;
     top: 50px;
+}
+
+/* cursor objects */
+
+#hand {
+    pointer-events: none;
+
+    position: fixed;
+    height: 9vh;
+    transform: translate(-71px, 13px) rotate(-95deg);
+
+    left: 0px;
+    top: 0px;
 }

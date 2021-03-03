@@ -9,6 +9,12 @@ export default class Scene {
         })
     }
 
+    unload () {
+        this.staticElements.forEach( (elem) => {
+            this.toggleVisibility(elem);
+        })
+    }
+
     toggleVisibility (obj) {
         obj.classList.toggle("hidden");
     }

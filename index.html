@@ -6,13 +6,26 @@
         <title>Go &ndash; interaktive Dokumentation</title>
     </head>
     <body>
+        <!-- page content -->
         <section id="canvas">
-            <!-- Include static objects -->
-            <img src="img/static/train_station.png" id="station" class="hidden"/>
-            <img src="img/static/station_hall.svg" id="station-hall" class="hidden"/>
+            <!-- Include static images -->
+            <img src="img/static/train_station.png" id="station" />
+            <img src="img/static/stationHall_entry.svg" id="station-hall-entry" />
+            <img src="img/static/stationHall_leave.svg" id="station-hall-leave" />
+            <img src="img/static/platform.svg" id="platform" />
+            <img src="img/static/train_inside.png" id="train-inside" />
+
+            <!-- Include interactable images -->
+            <img src="img/static/hand.svg" id="hand" class="hidden" />
+            <img src="img/static/button.svg" id="button" />
+            <img src="img/static/train.svg" id="train" />
+            <img src="img/static/stairs_left.svg" id="stairs-left" />
+            <img src="img/static/stairs_right.svg" id="stairs-right" />
+            <img src="img/static/paying_machine.svg" id="paying-machine" />
 
             <!-- Include dynamic objects -->
-            <object type="image/svg+xml" data="./img/animated/Frau(1).svg" id="woman" class="hidden"></object>
+            <object type="image/svg+xml" data="./img/animated/button_animated.svg" id="button-animated"></object>
+            <object type="image/svg+xml" data="./img/animated/Frau(1).svg" id="woman"></object>
         </section>
 
         <!-- Animation -->
