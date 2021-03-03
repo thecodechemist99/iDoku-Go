@@ -28,14 +28,67 @@ object {
 }
 
 .hidden {
+/*    display: none;*/
     display: none;
+    visibility: hidden;
 }
 
 /* static objects */
 
+#inlets {
+    position: absolute;
+    top: 42.6%;
+    left: -3.5%;
+    height: 46.8%;
+}
+
+#inlet {
+    position: absolute;
+    top: -10%;
+    right: -50%;
+    height: 155%;
+
+    transform: scaleX(-1);
+}
+
+#inlet-animated {
+    top: -10%;
+    right: -50.2%;
+    height: 155%;
+
+    transform: scaleX(-1);
+}
+
+#button {
+    position: absolute;
+    top: 18.3%;
+    left: 73.7%;
+    height: 7%;
+
+    transform: scaleX(-1);
+}
+
+#button-animated {
+    position: absolute;
+    top: -10%;
+    right: -50%;
+    height: 155%;
+
+    transform: scaleX(-1);
+}
+
+#token {
+    position: absolute;
+    top: 28.7%;
+    left: 78.7%;
+    height: 5%;
+
+    transform: scaleX(-1);
+}
+
 #stairs-left {
     position: absolute;
-    left: -11px;
+    left: -0.7%;
     top: 43.9%;
     height: 31.9%;
 }
@@ -43,21 +96,135 @@ object {
 #stairs-right {
     position: absolute;
     top: 44.5%;
-    right: -29.5px;
+    left: 79.7%;
     height: 32.55%;
+}
+
+#paying-machines {
+    position: absolute;
+    top: 34.8%;
+    left: 12.8%;
+    height: 55%;
+}
+
+#paying-machine {
+    position: absolute;
+    top: -10%;
+    right: -45%;
+    height: 142%;
+}
+
+#outlets {
+    position: absolute;
+    top: 49.9%;
+    left: 69.4%;
+    height: 54%;
+}
+
+#outlet {
+    position: absolute;
+    top: -10%;
+    right: -50%;
+    height: 155%;
+
+    transform: scaleX(-1);
+}
+
+#retry {
+    position: absolute;
+    top: 4%;
+    right: 0%;
+    height: 13%;
+}
+
+#more {
+    position: absolute;
+    top: 20%;
+    right: 1.2%;
+    height: 10%;
+}
+
+/* text bubbles */
+
+#text-inlet {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    height: 40%;
+}
+
+#text-token {
+    position: absolute;
+    top: 12%;
+    left: 0%;
+    height: 25%;
+}
+
+#text-travel {
+    z-index: 5;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    height: 25%;
+}
+
+#text-token-types {
+    position: absolute;
+    top: 15%;
+    left: 0%;
+    height: 35%;
+}
+
+#text-payment-machine {
+    position: absolute;
+    top: 0%;
+    left: 0%;
 }
 
 /* animated objects */
 
 #woman {
-    left: 50px;
-    top: 50px;
+    display: inline;
+    left: 22%;
+    top: 51%;
+    height: 50%;
+    transition: transform 8s linear;
+}
+
+.enter {
+    transform: translate(2%, -13%) scale(0.4);
+}
+
+#train {
+    z-index: 5;
+    display: inline;
+    position: absolute;
+    top: 20.5%;
+    height: 80%;
+    left: 120%;
+    transition: transform 3s ease-in-out 1s;
+}
+
+.stop {
+    visibility: visible;
+    transform: translateX(-79%);
+}
+
+.left {
+    visibility: visible;
+    transform: translateX(-140%);
+}
+
+#train-inside {
+    position: relative;
+    height: 100%;
 }
 
 /* cursor objects */
 
 #hand {
     pointer-events: none;
+    z-index: 10;
 
     position: fixed;
     height: 9vh;
