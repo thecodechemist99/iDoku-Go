@@ -122,6 +122,7 @@ train.addEventListener('click', () => {
     
         // start train
         train.style.setProperty('left', '45%');
+        
         train.classList.add('left');
     }, 5000);
 });
