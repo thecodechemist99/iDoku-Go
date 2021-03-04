@@ -52,8 +52,8 @@ object {
 }
 
 #inlet-animated {
-  top: -10vh;
-  left: -14vh;
+  top: -10.1vh;
+  left: -13.6vh;
   height: 155%;
 
   transform: scaleX(-1);
@@ -117,7 +117,7 @@ object {
 #paying-text {
     position: absolute;
     top: 46.5vh;
-    left: 103vh;
+    left: 113vh;
 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #86bc28;
@@ -126,7 +126,7 @@ object {
 #cash-insert {
     position: absolute;
     top: 30.1vh;
-    left: 38.47vh;
+    left: 115.95vh;
     height: 7.2vh;
 }
 
@@ -140,7 +140,7 @@ object {
 #outlet {
   position: absolute;
   top: -10vh;
-  left: -40vh;
+  left: -14vh;
   height: 155vh;
 
   transform: scaleX(-1);
@@ -215,7 +215,7 @@ object {
   z-index: 5;
   display: inline;
   position: absolute;
-  top: 20.5%;
+  top: 20.7vh;
   height: 80vh;
   left: 200vh;
   transition: transform 3s ease-in-out 1s;

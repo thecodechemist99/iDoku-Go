@@ -186,9 +186,18 @@ train.addEventListener('click', () => {
         scenes[5].load();
     
         // start train
-        train.style.setProperty('left', '45%');
-        
+        train.style.setProperty('left', '-45vh');
         train.classList.add('left');
+        setTimeout( () => {
+            // reset train
+            train.style.setProperty('left', '200vh');
+            train.classList.remove('left');
+
+            setTimeout( () => {
+                // next train
+                train.classList.add('stop');
+            }, 3000);
+        }, 4000);
     }, 5000);
 });
 
