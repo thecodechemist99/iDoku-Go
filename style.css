@@ -71,7 +71,7 @@ object {
 #button-animated {
   position: absolute;
   top: -10vh;
-  right: 50vh;
+  left: 130vh;
   height: 155%;
 
   transform: scaleX(-1);
