@@ -26,6 +26,7 @@ const stairsLeft = document.getElementById('stairs-left');
 const stairsRight = document.getElementById('stairs-right');
 const payingMachines = document.getElementById('paying-machines');
 const payingMachine = document.getElementById('paying-machine');
+const cashInsert = document.getElementById('cash-insert');
 const outlets = document.getElementById('outlets');
 const outlet = document.getElementById('outlet');
 const more = document.getElementById('more');
@@ -36,13 +37,13 @@ const textInlet = document.getElementById('text-inlet');
 const textToken = document.getElementById('text-token');
 const textTravel = document.getElementById('text-travel');
 const textTokenTypes = document.getElementById('text-token-types');
-const textPaymentMachine = document.getElementById('text-payment-machine');
 
 // load dynamic elements
 const hand = document.getElementById('hand');
 const woman = document.getElementById('woman');
 const buttonAnimated = document.getElementById('button-animated');
 const train = document.getElementById('train');
+const payingText = document.getElementById('paying-text');
 
 // setup scenes
 const scenes = [
@@ -53,17 +54,73 @@ const scenes = [
     new Scene([trainInside]),
     new Scene([platform, stairsLeft, stairsRight]),
     new Scene([stationHallLeave, payingMachines]),
-    new Scene([stationBlurred, payingMachine, textTokenTypes]),
+    new Scene([stationBlurred, payingMachine, cashInsert, payingText, textTokenTypes]),
     new Scene([stationHallLeave, outlets]),
     new Scene([stationBlurred, outlet]),
     new Scene([endcard, more, retry])
 ]
+
+// train rides
+const trips = {
+    'Mainz Hbf': {
+        'Dieburg': 1250,
+        'Darmstadt Hbf': 870,
+        'Frankfurt (Main) Hbf': 870
+    },
+    'Dieburg': {
+        'Mainz Hbf': 1250,
+        'Darmstadt Hbf': 330,
+        'Frankfurt (Main) Hbf': 870
+    },
+    'Darmstadt Hbf': {
+        'Mainz Hbf': 870,
+        'Dieburg': 330,
+        'Frankfurt (Main) Hbf': 870
+    },
+    'Frankfurt (Main) Hbf': {
+        'Mainz Hbf': 870,
+        'Dieburg': 870,
+        'Darmstadt Hbf': 870,
+    }
+}
+let currStation;
+let rides = [];
+
+function randomStation () {
+    const stations = Object.keys(trips);
+    const rnd = Math.floor(Math.random() * stations.length);
+    return stations[rnd];
+}
+
+function price () {
+    let price = 0;
+    rides.forEach( (ride) => {
+        price += trips[ride[0]][ride[1]];
+    });
+    return (price / 100).toFixed(2);
+}
+
+function getPayingText () {
+    let str = '';
+    // add rides
+    rides.forEach( (ride) => {
+        str += `${ride[0]}–${ride[1]}\n`;
+    });
+    // add price
+    str += `${price()} €`
+
+    return str;
+}
 
 // animations and scene switches
 
 start();
 
 function start () {
+    // set station
+    currStation = randomStation();
+
+    // start
     scenes[0].load();
     woman.classList.add('enter');
     setTimeout(() => {
@@ -107,6 +164,14 @@ token.addEventListener('click', () => {
 });
 
 train.addEventListener('click', () => {
+    // save ride
+    let dest; 
+    do {
+        dest = randomStation();
+    } while (dest === currStation);
+    rides.push([currStation, dest]);
+    currStation = dest;
+
     // hide train
     train.classList.remove('stop');
     
@@ -139,11 +204,14 @@ stairsRight.addEventListener('click', () => {
 payingMachines.addEventListener('click', () => {
     scenes[6].unload();
     scenes[7].load();
+    hand.src = 'img/static/hand_money.svg';
+    payingText.innerText = getPayingText();
 });
 
-payingMachine.addEventListener('click', () => {
+cashInsert.addEventListener('click', () => {
     scenes[7].unload();
     scenes[8].load();
+    hand.src = 'img/static/hand_token.svg';
 });
 
 outlets.addEventListener('click', () => {

@@ -114,6 +114,22 @@ object {
     height: 142%;
 }
 
+#paying-text {
+    position: absolute;
+    top: 46.5vh;
+    left: 103vh;
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #86bc28;
+}
+
+#cash-insert {
+    position: absolute;
+    top: 30.1vh;
+    left: 38.47vh;
+    height: 7.2vh;
+}
+
 #outlets {
     position: absolute;
     top: 49.9%;
