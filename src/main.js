@@ -8,6 +8,8 @@ elements.forEach( (elem) => {
 });
 
 // load backgrounds
+//const start1 = document.getElementById('start1');
+//const start2 = document.getElementById('start2');
 const station = document.getElementById('station');
 const stationBlurred = document.getElementById('station-blurred');
 const stationHallEntry = document.getElementById('station-hall-entry');
@@ -31,6 +33,9 @@ const outlets = document.getElementById('outlets');
 const outlet = document.getElementById('outlet');
 const more = document.getElementById('more');
 const retry = document.getElementById('retry');
+//const start1 = document.getElementById('start1');
+//const start2 = document.getElementById('start2');
+
 
 // load text bubbles
 const textInlet = document.getElementById('text-inlet');
@@ -101,6 +106,7 @@ function price () {
 }
 
 function getPayingText () {
+
     let str = '';
     // add rides
     rides.forEach( (ride) => {
@@ -110,17 +116,29 @@ function getPayingText () {
     str += `${price()} €`
 
     return str;
+
 }
 
 // animations and scene switches
 
 start();
 
+/*function startstartstart (){
+    scenes[11].load();
+}
+
+function startstart (){
+    scenes[11].unload();
+    scenes[12].load();
+    
+}*/
+
 function start () {
     // set station
     currStation = randomStation();
 
     // start
+   
     scenes[0].load();
     woman.classList.add('enter');
     setTimeout(() => {
@@ -200,6 +218,15 @@ train.addEventListener('click', () => {
         }, 4000);
     }, 5000);
 });
+
+/*start1.addEventListener('click', () => {
+    scenes[11].load();
+});
+
+start2.addEventListener('click', () => {
+    scenes[11].unload();
+    scenes[12].load();
+});*/
 
 stairsLeft.addEventListener('click', () => {
     scenes[5].unload();

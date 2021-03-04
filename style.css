@@ -74,12 +74,9 @@ object {
   top: 18.3vh;
   left: 126vh;
   height: 7%;
-
-  transform: scaleX(-1);
 }
 
 #button:hover {
-  transform: scaleX(-1);
   transform: scale(1.1);
   background: url("img/static/Knopf_statisch_klein2.svg") no-repeat;
 }
@@ -114,6 +111,13 @@ object {
   height: 31.9%;
 }
 
+#stairs-left:hover {
+  transform: scale(1.02);
+  left: -1.1vh;
+  top: 43.9vh;
+  background: url("img/static/stairs_left.svg") no-repeat;
+}
+
 #stairs-right {
   position: absolute;
   top: 44.5vh;
@@ -121,22 +125,27 @@ object {
   height: 32.55%;
 }
 
+#stairs-right:hover {
+  transform: scale(1.02);
+  top: 44.6vh;
+  left: 141.5vh;
+  background: url("img/static/stairs_right.svg") no-repeat;
+}
+
 #paying-machines {
   position: absolute;
   top: 34.8vh;
-  left: 21.8vh;
+  left: 22.8vh;
   height: 55%;
   position: absolute;
-  top: 34.8%;
-  left: 14.8%;
-  height: 55%;
 }
+
 #paying-machines:hover {
   position: absolute;
-  top: 34.8%;
-  left: 14.8%;
+  top: 34.8vh;
+  left: 22.8vh;
   height: 55%;
-  transform: scale(1.1);
+  transform: scale(1.05);
   background: url("img/static/Automaten-glow2.svg") no-repeat;
 }
 
@@ -163,6 +172,13 @@ object {
   left: 115.95vh;
   height: 7.2vh;
 }
+#cash-insert:hover {
+  top: 30.1vh;
+  left: 115.95vh;
+  height: 7.2vh;
+  transform: scale(1.07);
+  background: url("img/static/cash_insert.svg") no-repeat;
+}
 
 #outlets {
   position: absolute;
@@ -171,13 +187,28 @@ object {
   height: 54%;
 }
 
+#outlets:hover {
+  top: 49.9vh;
+  left: 124.4vh;
+  height: 54%;
+  transform: scale(1.05);
+  background: url("img/static/outlets.svg") no-repeat;
+}
+
 #outlet {
   position: absolute;
   top: -10vh;
-  left: -14vh;
+  left: -25vh;
   height: 155vh;
+}
 
+#outlet:hover {
+  top: -10vh;
+  left: -25vh;
+  height: 155vh;
   transform: scaleX(-1);
+  transform: scale(1.05);
+  background: url("img/static/outlet_neutral.svg") no-repeat;
 }
 
 #retry {
@@ -187,11 +218,27 @@ object {
   height: 13%;
 }
 
+#retry:hover {
+  top: 4vh;
+  left: 127.5vh;
+  height: 13%;
+  transform: scale(1.1);
+  background: url("img/static/btn_retry.svg") no-repeat;
+}
+
 #more {
   position: absolute;
   top: 20vh;
   left: 119.2vh;
   height: 10%;
+}
+
+#more:hover {
+  top: 20vh;
+  left: 119.2vh;
+  height: 10%;
+  transform: scale(1.1);
+  background: url("img/static/btn_more.svg") no-repeat;
 }
 
 /* text bubbles */
