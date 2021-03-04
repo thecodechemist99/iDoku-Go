@@ -41,13 +41,15 @@ object {
   left: -6vh;
   height: 46.8%;
   position: absolute;
-  top: 42.6%;
-  left: -3.5%;
+  top: 42.6vh;
+  left: -6.5vh;
   height: 46.8%;
 }
 
 #inlets:hover {
-  background: url("img/static/inlets-glow.svg") no-repeat;
+  left: -6vh;
+  transform: scale(1.05);
+  background: url("img/static/inlets.svg") no-repeat;
 }
 
 #inlet {
@@ -76,6 +78,12 @@ object {
   transform: scaleX(-1);
 }
 
+#button:hover {
+  transform: scaleX(-1);
+  transform: scale(1.1);
+  background: url("img/static/Knopf_statisch_klein2.svg") no-repeat;
+}
+
 #button-animated {
   position: absolute;
   top: -10vh;
@@ -92,6 +100,11 @@ object {
   height: 5%;
 
   transform: scaleX(-1);
+}
+#token:hover {
+  transform: scale(1.1);
+
+  /*background: url("img/static/token.svg") no-repeat;*/
 }
 
 #stairs-left {
@@ -115,15 +128,16 @@ object {
   height: 55%;
   position: absolute;
   top: 34.8%;
-  left: 12.8%;
+  left: 14.8%;
   height: 55%;
 }
 #paying-machines:hover {
   position: absolute;
   top: 34.8%;
-  left: 12.8%;
+  left: 14.8%;
   height: 55%;
-  background: url("img/static/paying-glow.svg") no-repeat;
+  transform: scale(1.1);
+  background: url("img/static/Automaten-glow2.svg") no-repeat;
 }
 
 #paying-machine {
@@ -134,19 +148,20 @@ object {
 }
 
 #paying-text {
-    position: absolute;
-    top: 46.5vh;
-    left: 113vh;
-
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #86bc28;
+  position: absolute;
+  top: 46.5vh;
+  left: 113vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black;
+  transform: rotate(1deg);
 }
 
 #cash-insert {
-    position: absolute;
-    top: 30.1vh;
-    left: 115.95vh;
-    height: 7.2vh;
+  position: absolute;
+  top: 30.1vh;
+  left: 115.95vh;
+  height: 7.2vh;
 }
 
 #outlets {
