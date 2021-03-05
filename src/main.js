@@ -1,5 +1,5 @@
 // imports
-import Scene from './scenes/Scene.mjs';
+import Scene from './scenes/Scene.js';
 
 // hide all elements
 const elements = Array.from(document.getElementById('canvas').children);
