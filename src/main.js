@@ -8,8 +8,8 @@ elements.forEach( (elem) => {
 });
 
 // load backgrounds
-//const start1 = document.getElementById('start1');
-//const start2 = document.getElementById('start2');
+const startScreen = document.getElementById('start-screen');
+const startDescription = document.getElementById('start-description');
 const station = document.getElementById('station');
 const stationBlurred = document.getElementById('station-blurred');
 const stationHallEntry = document.getElementById('station-hall-entry');
@@ -19,6 +19,8 @@ const trainInside = document.getElementById('train-inside');
 const endcard = document.getElementById('endcard');
 
 // load static elements
+const startButton = document.getElementById('start-button');
+const arrowButton = document.getElementById('arrow-button');
 const inlets = document.getElementById('inlets');
 const inlet = document.getElementById('inlet');
 const button = document.getElementById('button');
@@ -33,9 +35,6 @@ const outlets = document.getElementById('outlets');
 const outlet = document.getElementById('outlet');
 const more = document.getElementById('more');
 const retry = document.getElementById('retry');
-//const start1 = document.getElementById('start1');
-//const start2 = document.getElementById('start2');
-
 
 // load text bubbles
 const textInlet = document.getElementById('text-inlet');
@@ -52,6 +51,8 @@ const payingText = document.getElementById('paying-text');
 
 // setup scenes
 const scenes = [
+    new Scene([startScreen, startButton]),
+    new Scene([startDescription, arrowButton]),
     new Scene([station, woman]),
     new Scene([stationHallEntry, inlets]),
     new Scene([stationBlurred, inlet, button]),
@@ -106,7 +107,6 @@ function price () {
 }
 
 function getPayingText () {
-
     let str = '';
     // add rides
     rides.forEach( (ride) => {
@@ -116,41 +116,41 @@ function getPayingText () {
     str += `${price()} €`
 
     return str;
-
 }
 
 // animations and scene switches
 
 start();
 
-/*function startstartstart (){
-    scenes[11].load();
+function start () {
+    scenes[0].load();
 }
 
-function startstart (){
-    scenes[11].unload();
-    scenes[12].load();
-    
-}*/
+startButton.addEventListener('click', () => {
+    scenes[0].unload();
+    scenes[1].load();
+});
 
-function start () {
+arrowButton.addEventListener('click', () => {
+    scenes[1].unload();
+
     // set station
+    rides = [];
     currStation = randomStation();
 
     // start
-   
-    scenes[0].load();
+    scenes[2].load();
     woman.classList.add('enter');
     setTimeout(() => {
         woman.classList.remove('enter');
-        scenes[0].unload();
-        scenes[1].load();
+        scenes[2].unload();
+        scenes[3].load();
     }, 8000);
-}
+});
 
 inlets.addEventListener('click', () => {
-    scenes[1].unload();
-    scenes[2].load();
+    scenes[3].unload();
+    scenes[4].load();
     textInlet.classList.remove('hidden');
 });
 
@@ -174,8 +174,8 @@ token.addEventListener('click', () => {
     hand.src = 'img/static/hand_token.svg';
 
     // load next scene
-    scenes[2].unload();
-    scenes[3].load();
+    scenes[4].unload();
+    scenes[5].load();
 
     // start train
     train.classList.add('stop');
@@ -195,13 +195,13 @@ train.addEventListener('click', () => {
     
     // load scene
     textTravel.classList.remove('hidden');
-    scenes[3].unload();
-    scenes[4].load();
+    scenes[5].unload();
+    scenes[6].load();
 
     setTimeout( () => {
         textTravel.classList.add('hidden');
-        scenes[4].unload();
-        scenes[5].load();
+        scenes[6].unload();
+        scenes[7].load();
     
         // start train
         train.style.setProperty('left', '-45vh');
@@ -219,52 +219,43 @@ train.addEventListener('click', () => {
     }, 5000);
 });
 
-/*start1.addEventListener('click', () => {
-    scenes[11].load();
-});
-
-start2.addEventListener('click', () => {
-    scenes[11].unload();
-    scenes[12].load();
-});*/
-
 stairsLeft.addEventListener('click', () => {
-    scenes[5].unload();
-    scenes[6].load();
+    scenes[7].unload();
+    scenes[8].load();
 });
 
 stairsRight.addEventListener('click', () => {
-    scenes[5].unload();
-    scenes[6].load();
+    scenes[7].unload();
+    scenes[8].load();
 });
 
 payingMachines.addEventListener('click', () => {
-    scenes[6].unload();
-    scenes[7].load();
+    scenes[8].unload();
+    scenes[9].load();
     hand.src = 'img/static/hand_money.svg';
     payingText.innerText = getPayingText();
 });
 
 cashInsert.addEventListener('click', () => {
-    scenes[7].unload();
-    scenes[8].load();
+    scenes[9].unload();
+    scenes[10].load();
     hand.src = 'img/static/hand_token.svg';
 });
 
 outlets.addEventListener('click', () => {
-    scenes[8].unload();
-    scenes[9].load();
+    scenes[10].unload();
+    scenes[11].load();
 });
 
 outlet.addEventListener('click', () => {
     hand.src = 'img/static/hand.svg';
-    scenes[9].unload();
-    scenes[10].load();
+    scenes[11].unload();
+    scenes[12].load();
 });
 
 // endcard buttons
 retry.addEventListener('click', () => {
-    scenes[10].unload();
+    scenes[12].unload();
     start();
 });
 
