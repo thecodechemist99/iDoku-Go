@@ -1,0 +1,3 @@
+Projekt: Go
+Von: Florian Beck, Annekathrin Kolb, Marie Sasse
+Link: https://go-doku.florian-beck.de
