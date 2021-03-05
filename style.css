@@ -35,11 +35,37 @@ object {
 
 /* static objects */
 
+#start-button {
+  position: absolute;
+  top: 63vh;
+  left: 51.5vh;
+  height: 21vh;
+}
+
+#start-button:hover {
+  transform: scale(1.05);
+}
+
+#arrow-button {
+  position: absolute;
+  top: 71.5vh;
+  left: 136vh;
+  height: 15vh;
+}
+
+#arrow-button:hover {
+  transform: translateX(-0.1vh) scale(1.05);
+}
+
 #inlets {
   position: absolute;
   top: 42.6vh;
-  left: -6vh;
+  left: -6.4vh;
   height: 46.8%;
+}
+
+#inlets:hover {
+  transform: translate(0.2vh, -0.2vh) scale(1.02);
 }
 
 #inlet {
@@ -64,8 +90,10 @@ object {
   top: 18.3vh;
   left: 126vh;
   height: 7%;
+}
 
-  transform: scaleX(-1);
+#button:hover {
+  transform: translate(-0.1vh, -0.1vh) scale(1.1);
 }
 
 #button-animated {
@@ -86,25 +114,41 @@ object {
   transform: scaleX(-1);
 }
 
+#token:hover {
+  transform: scale(-1.1, 1.1);
+}
+
 #stairs-left {
   position: absolute;
-  left: -1vh;
-  top: 43.9vh;
+  left: -1.25vh;
+  top: 43.98vh;
   height: 31.9%;
+}
+
+#stairs-left:hover {
+  transform: translate(0.1vh, -0.3vh) scale(1.02);
 }
 
 #stairs-right {
   position: absolute;
-  top: 44.5vh;
-  left: 141.5vh;
+  top: 44.6vh;
+  left: 141.7vh;
   height: 32.55%;
+}
+
+#stairs-right:hover {
+  transform: translate(-0.1vh, -0.3vh) scale(1.02);
 }
 
 #paying-machines {
   position: absolute;
   top: 34.8vh;
-  left: 21.8vh;
+  left: 22.8vh;
   height: 55%;
+}
+
+#paying-machines:hover {
+  transform: scale(1.015);
 }
 
 #paying-machine {
@@ -115,35 +159,45 @@ object {
 }
 
 #paying-text {
-    position: absolute;
-    top: 46.5vh;
-    left: 113vh;
-
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #86bc28;
+  position: absolute;
+  top: 46.5vh;
+  left: 113vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #312782;
 }
 
 #cash-insert {
-    position: absolute;
-    top: 30.1vh;
-    left: 115.95vh;
-    height: 7.2vh;
+  position: absolute;
+  top: 30.1vh;
+  left: 115.95vh;
+  height: 7.2vh;
+}
+#cash-insert:hover {
+  transform: scale(1.06);
 }
 
 #outlets {
   position: absolute;
-  top: 49.9vh;
-  left: 124.4vh;
+  top: 49.5vh;
+  left: 123.5vh;
   height: 54%;
+}
+
+#outlets:hover {
+  transform: translate(0.15vh, -0.3vh) scale(1.02);
 }
 
 #outlet {
   position: absolute;
-  top: -10vh;
-  left: -14vh;
+  top: 16vh;
+  left: 82vh;
   height: 155vh;
-
   transform: scaleX(-1);
+}
+
+#outlet:hover {
+  transform: scale(-1.05, 1.05);
 }
 
 #retry {
@@ -153,11 +207,19 @@ object {
   height: 13%;
 }
 
+#retry:hover {
+  transform: scale(1.06);
+}
+
 #more {
   position: absolute;
   top: 20vh;
   left: 119.2vh;
   height: 10%;
+}
+
+#more:hover {
+  transform: translateX(-1vh) scale(1.04);
 }
 
 /* text bubbles */
